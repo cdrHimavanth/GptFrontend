@@ -1,1 +1,8 @@
-<p>navbar works!</p>
+<div [class]="theme?'theme-light inner-nav':'theme-dark inner-nav'">
+    <h1>JavaGPT</h1>
+    <div>
+        <button [class]="theme?'theme-light theme-button':'theme-dark theme-button'" (click)="callDavinci()">Apis</button>
+        <button  [class]="theme?'theme-light theme-button':'theme-dark theme-button'"   (click)="toggleTheme()">Theme</button>
+    </div>
+    
+</div>

@@ -1,0 +1,25 @@
+.theme-light{  
+    background-color: grey;
+    color: black;
+}
+.theme-dark{
+    background-color: black;
+    color: white;
+}
+.inner-nav{
+    width: 100vw;
+    height: 7vh;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    overflow: hidden;
+}
+.theme-button{
+    margin-right: 25px;
+    padding: 5px;
+    padding-left: 10px;
+    padding-right: 10px;
+    border: solid 1px;
+    border-radius: 5px;
+}

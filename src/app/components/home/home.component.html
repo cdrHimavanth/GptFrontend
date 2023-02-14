@@ -1,1 +1,18 @@
-<p>home works!</p>
+<div class="body-container">
+    <div class="answer-container">
+        <div *ngIf="prompts.length===0" >
+            No Prompts Found
+        </div>
+        <div *ngFor="let pr of prompts;;let i=index;">
+            <p class="question">{{pr}}</p>
+            <p class="answer typing">{{answers[i]}}</p>
+        </div>
+    </div>
+    
+    
+    <form class="prompt-container" [formGroup]="promptForm" (ngSubmit)="newPrompt()">
+        <input class="prompt-styling form-field" type="text" formControlName="prompt">
+        <button class="btn" [disabled]="!promptForm.valid" type="submit">Submit</button>
+      </form>
+    
+</div>

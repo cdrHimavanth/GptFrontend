@@ -1,0 +1,42 @@
+.body-container{
+    width: 100vw;
+    height: 95vh;
+    background-color: rgb(230, 230, 230);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 15px;
+}
+.question{
+    font-family: 'Times New Roman', Times, serif;
+}
+.answer{
+    background-color: rgb(133, 133, 133);
+    color: black;
+}
+.prompt-container{
+    width: 60%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 2%;
+}
+.prompt-styling{
+    width: 80%;
+}
+.answer-container{
+    overflow-y: auto;
+    height: 90%;
+}
+@keyframes typing {
+    from {
+      width: 0;
+    }
+    to {
+      width: 100%;
+    }
+  }
+  
+  .typing {
+    display: inline-block;
+    animation: typing 2s steps(20) ;
+  }

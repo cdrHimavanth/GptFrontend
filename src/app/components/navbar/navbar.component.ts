@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Openai1Service } from 'src/app/services/openai1.service';
 
 @Component({
   selector: 'app-navbar',
@@ -7,9 +8,21 @@ import { Component, OnInit } from '@angular/core';
 })
 export class NavbarComponent implements OnInit {
 
-  constructor() { }
+  public theme:boolean=false;
+
+  constructor(private openai1:Openai1Service) { }
 
   ngOnInit(): void {
+  }
+
+  callDavinci(){
+    this.openai1.davinci().subscribe(a=>{
+      console.log(a);
+    })
+  }
+
+  toggleTheme(){
+    this.theme =!this.theme;
   }
 
 }
