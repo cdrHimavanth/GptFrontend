@@ -6,7 +6,8 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
   providedIn: 'root',
 })
 export class Openai1Service {
-  OPENAI_API_KEY = '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';
+  OPENAI_API_KEY = "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"; 
+  //'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';
 
   constructor(private http: HttpClient) {}
 
@@ -23,21 +24,17 @@ export class Openai1Service {
     });
   }
 
-  davinci() {
-    const headers = new HttpHeaders().set('Content-Type', 'application/json');
-    headers.set('Authorization', 'Bearer ' + this.OPENAI_API_KEY);
+  davinci(x:string):any {
+    const headers = new HttpHeaders().set('Authorization', 'Bearer ' + this.OPENAI_API_KEY);
     const body = {
-      model: 'code-davici-002',
-      prompt: 'Hello world',
-      max_tokens: 5,
-      temperature: 0.5,
-      top_p: 1,
-      frequency_penalty: 0,
-      presence_penalty: 0,
+      "model": "code-davinci-002",
+      "prompt": x,
+      "max_tokens": 50,
+      "temperature": 0
     };
 
     return this.http.post(
-      'https://api.openai.com/v1/engine/davinci-codex/completions',
+      'https://api.openai.com/v1/completions',
       body,
       { headers }
     );

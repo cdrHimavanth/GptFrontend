@@ -16,7 +16,7 @@ export class NavbarComponent implements OnInit {
   }
 
   callDavinci(){
-    this.openai1.davinci().subscribe(a=>{
+    this.openai1.davinci("Hello").subscribe((a: any)=>{
       console.log(a);
     })
   }

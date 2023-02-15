@@ -27,9 +27,12 @@ export class HomeComponent implements OnInit {
   public answers:string[]=[];
 
   newPrompt(){
-    this.prompts.push(this.promptForm.value.prompt);
-    
-    this.answers.push("Answer for "+this.promptForm.value.prompt);
+    let x= this.promptForm.value.prompt;
+    this.prompts.push(x);
+    this.ai.davinci(x).subscribe((a:any)=>{
+      console.log(a)
+      this.answers.push(a.choices[0].text)
+    })
     this.promptForm.patchValue({prompt:''});
   }
 
